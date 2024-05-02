@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NNegrete.Models
 {
@@ -10,7 +11,9 @@ namespace NNegrete.Models
         [Required] 
         public String Nombre { get; set; }
         public Boolean Matriculado { get; set; }
+        [ForeignKey("IdCarrera")]
+        public int IdCarrera { get; set; }
          
-
+        public Carrera Carrera { get; set; }
     }
 }

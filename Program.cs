@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using NNegrete.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<NNegreteContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NNegreteContext") ?? throw new InvalidOperationException("Connection string 'NNegreteContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
