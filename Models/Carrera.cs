@@ -5,6 +5,7 @@ namespace NNegrete.Models
     public class Carrera
     {
         public String Nombre_carrera { get; set; }
+        [Required]
         public String Campus { get; set; }
         public int Numero_semestres { get; set; }
         [Key]
